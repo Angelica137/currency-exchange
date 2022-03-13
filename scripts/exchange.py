@@ -18,10 +18,18 @@ def get_change(budget, exchange_value):
     return budget - exchange_value
 
 
-def get_value_of_bills(denomination: int, number_of_bills: int) -> int:
+def get_value_of_bills(denomination, number_of_bills) -> int:
     """
     :param denomination: int - the value of a single bill
     :param number_of_bills: int - Numbner of bills received
     :return: int - Amount of money returned
     """
     return denomination * number_of_bills
+
+
+def get_number_of_bills(budget, denomination):
+    """
+    :param budget: float - amount of money to be exchanged
+    :param denomination: int - the value of a single bill
+    :return: the number of new currency bills that are received
+    """

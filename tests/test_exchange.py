@@ -11,3 +11,7 @@ def test_get_change():
 
 def test_get_value_of_bills():
     assert get_value_of_bills(5, 128) == 640
+
+
+def test_get_number_of_bills():
+    assert get_number_of_bills(127.5, 5) == 25
