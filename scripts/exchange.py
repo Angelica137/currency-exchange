@@ -16,3 +16,12 @@ def get_change(budget, exchange_value):
     :return: float - the amount of money that is left from the bodget
     """
     return budget - exchange_value
+
+
+def get_value_of_bills(denomination: int, number_of_bills: int) -> int:
+    """
+    :param denomination: int - the value of a single bill
+    :param number_of_bills: int - Numbner of bills received
+    :return: int - Amount of money returned
+    """
+    return denomination * number_of_bills
