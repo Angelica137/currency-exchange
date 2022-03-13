@@ -7,3 +7,7 @@ def test_exchange_money():
 
 def test_get_change():
     assert get_change(127.5, 120) == 7.5
+
+
+def test_get_value_of_bills():
+    assert get_value_of_bills(5, 128) == 640
