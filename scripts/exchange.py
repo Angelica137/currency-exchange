@@ -33,3 +33,4 @@ def get_number_of_bills(budget, denomination):
     :param denomination: int - the value of a single bill
     :return: the number of new currency bills that are received
     """
+    return budget // denomination
