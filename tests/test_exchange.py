@@ -39,3 +39,7 @@ def test_exchangeable_value_1400():
 
 def test_non_exchangeable_value_16():
     assert non_exchangeable_value(127.25, 1.20, 10, 20) == 16
+
+
+def test_non_exchangeable_value_1():
+    assert non_exchangeable_value(127.25, 1.20, 10, 5) == 1
