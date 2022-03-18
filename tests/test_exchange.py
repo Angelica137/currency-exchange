@@ -29,5 +29,13 @@ def test_exchange_value_returns_95():
     assert exchangeable_value(127.25, 1.20, 10, 5) == 95
 
 
+def test_exchangeable_value_8568():
+    assert exchangeable_value(100000, 10.61, 10, 1) == 8568
+
+
+def test_exchangeable_value_1400():
+    assert exchangeable_value(1500, 0.84, 25, 40) == 1400
+
+
 def test_non_exchangeable_value_16():
     assert non_exchangeable_value(127.25, 1.20, 10, 20) == 16
