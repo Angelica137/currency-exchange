@@ -47,9 +47,9 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     :return: the maximum value of the new currency in bills only
     => removes the petty change
     """
-    true_rate = exchange_rate + exchange_rate * (spread / 100)
-    exchange_value = exchange_money(budget, true_rate)
-    number_of_bills = get_number_of_bills(exchange_value, denomination)
+    true_rate = true_exchange(exchange_rate, spread)
+    number_of_bills = get_number_of_bills(
+        exchange_money(budget, true_rate), denomination)
     return get_value_of_bills(denomination, number_of_bills)
 
 
@@ -58,8 +58,14 @@ def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     This exchange booth keps the change in addition to chargin the commision
     :return: int - the value that is not exchangeable
     """
-    true_rate = exchange_rate + exchange_rate * (spread / 100)
-    exchange_value = exchange_money(budget, true_rate)
-    amount_returned = exchangeable_value(
-        budget, exchange_rate, spread, denomination)
-    return int(exchange_value - amount_returned)
+    true_rate = true_exchange(exchange_rate, spread)
+    return int(exchange_money(budget, true_rate) - exchangeable_value(
+        budget, exchange_rate, spread, denomination))
+
+
+def true_exchange(exchange_rate, spread):
+    """
+    :return: the real exchange rate when the commission (spread) 
+    has been sicounted
+    """
+    return exchange_rate * (1 + spread / 100)
