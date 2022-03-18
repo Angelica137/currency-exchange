@@ -62,4 +62,4 @@ def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     exchange_value = exchange_money(budget, true_rate)
     amount_returned = exchangeable_value(
         budget, exchange_rate, spread, denomination)
-    return round(exchange_value - amount_returned)
+    return int(exchange_value - amount_returned)
